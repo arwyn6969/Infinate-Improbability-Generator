@@ -1,0 +1,186 @@
+{
+  "validation_timestamp": "2025-12-09T16:41:21.781400",
+  "summary": {
+    "total_tests": 7,
+    "passed_tests": 6,
+    "success_rate": "6/7",
+    "all_passed": false
+  },
+  "detailed_results": {
+    "pipeline_integrity": {
+      "passed": true,
+      "imports_ok": true,
+      "models_dir_exists": true,
+      "sample_data_shape": [
+        100,
+        9
+      ],
+      "classifier_initialized": true
+    },
+    "feature_engineering": {
+      "passed": true,
+      "original_features": 3,
+      "lagged_features": 12,
+      "rolling_features": 3,
+      "total_features": 18,
+      "missing_features": [],
+      "extra_features": [
+        "directional_confidence",
+        "quantum_advantage"
+      ],
+      "has_nans": "False",
+      "data_shape": [
+        995,
+        24
+      ]
+    },
+    "label_generation": {
+      "passed": true,
+      "label_distribution": {
+        "0": 535,
+        "1": 455
+      },
+      "label_balance": 0.4595959595959596,
+      "balance_acceptable": "True",
+      "has_nans": "False",
+      "binary_labels": true,
+      "unique_values": [
+        "0",
+        "1"
+      ],
+      "sample_size": 990,
+      "feature_count": 21
+    },
+    "model_training": {
+      "passed": true,
+      "training_time_seconds": 0.17,
+      "training_completed": true,
+      "has_feature_importances": true,
+      "reasonable_training_time": true,
+      "training_samples": 1592,
+      "validation_samples": 398,
+      "features_used": 20,
+      "training_metrics": {
+        "train_date": "2025-12-09T16:41:21.184760",
+        "n_samples": 1592,
+        "features": [
+          "bullish_prob",
+          "bearish_prob",
+          "directional_confidence",
+          "quantum_advantage",
+          "total_momentum",
+          "bullish_prob_lag_1",
+          "bullish_prob_lag_2",
+          "bullish_prob_lag_3",
+          "bullish_prob_lag_5",
+          "bearish_prob_lag_1",
+          "bearish_prob_lag_2",
+          "bearish_prob_lag_3",
+          "bearish_prob_lag_5",
+          "total_momentum_lag_1",
+          "total_momentum_lag_2",
+          "total_momentum_lag_3",
+          "total_momentum_lag_5",
+          "bullish_prob_roll_mean_5",
+          "bearish_prob_roll_mean_5",
+          "total_momentum_roll_mean_5"
+        ],
+        "best_iteration": -1,
+        "feature_importances": {
+          "bullish_prob": 0.05555177852511406,
+          "bearish_prob": 0.0453411228954792,
+          "directional_confidence": 0.052956998348236084,
+          "quantum_advantage": 0.05548306182026863,
+          "total_momentum": 0.04986671730875969,
+          "bullish_prob_lag_1": 0.05676524341106415,
+          "bullish_prob_lag_2": 0.044843051582574844,
+          "bullish_prob_lag_3": 0.047284774482250214,
+          "bullish_prob_lag_5": 0.048850152641534805,
+          "bearish_prob_lag_1": 0.04317208006978035,
+          "bearish_prob_lag_2": 0.04884100332856178,
+          "bearish_prob_lag_3": 0.05477920174598694,
+          "bearish_prob_lag_5": 0.05050605535507202,
+          "total_momentum_lag_1": 0.056522268801927567,
+          "total_momentum_lag_2": 0.04580307379364967,
+          "total_momentum_lag_3": 0.04888058453798294,
+          "total_momentum_lag_5": 0.045933641493320465,
+          "bullish_prob_roll_mean_5": 0.04955703392624855,
+          "bearish_prob_roll_mean_5": 0.0542021170258522,
+          "total_momentum_roll_mean_5": 0.04486001655459404
+        }
+      }
+    },
+    "model_persistence": {
+      "passed": true,
+      "model_file_exists": true,
+      "metadata_file_exists": true,
+      "save_time_seconds": 0.001,
+      "load_time_seconds": 0.003,
+      "predictions_match": true,
+      "probabilities_match": true,
+      "metadata_preserved": true,
+      "features_preserved": true
+    },
+    "performance_metrics": {
+      "passed": false,
+      "accuracy": 0.47157190635451507,
+      "precision": 0.4392523364485981,
+      "recall": 0.32413793103448274,
+      "f1_score": 0.373015873015873,
+      "accuracy_threshold_met": false,
+      "f1_threshold_met": false,
+      "precision_ok": false,
+      "recall_ok": false,
+      "top_5_features": [
+        [
+          "bullish_prob_roll_mean_5",
+          "0.07221054"
+        ],
+        [
+          "bearish_prob_roll_mean_5",
+          "0.057395462"
+        ],
+        [
+          "directional_confidence",
+          "0.055144954"
+        ],
+        [
+          "bullish_prob",
+          "0.05337591"
+        ],
+        [
+          "bearish_prob_lag_5",
+          "0.051879562"
+        ]
+      ],
+      "quantum_features_important": true,
+      "total_features": 20,
+      "note": "Using relaxed thresholds for mock data validation"
+    },
+    "integration_compatibility": {
+      "passed": true,
+      "qaoa_detector_available": false,
+      "model_loaded_successfully": true,
+      "predictions_generated": true,
+      "probabilities_in_range": "True",
+      "reasonable_predictions": true,
+      "test_samples": 10,
+      "prediction_distribution": {
+        "1": 10
+      },
+      "feature_count": 20,
+      "note": "Test passed with synthetic quantum features"
+    },
+    "summary": {
+      "total_tests": 7,
+      "passed_tests": 6,
+      "success_rate": "6/7",
+      "all_passed": false
+    }
+  },
+  "system_info": {
+    "python_version": "3.11.13 (main, Jun  3 2025, 18:38:25) [Clang 17.0.0 (clang-1700.0.13.3)]",
+    "pandas_version": "2.3.3",
+    "numpy_version": "2.3.5"
+  }
+}
